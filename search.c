@@ -35,7 +35,6 @@ int add(int no)
 
 int search(int element,int no)
 {
-	int prompt;
 	for(i=0;i<no;i++)
 	{
 		if(arr[i]==element)
@@ -44,8 +43,7 @@ int search(int element,int no)
 		}
 		else
 		{
-			printf("No query found");
-			prompt=5;
+		//	printf("No query found");
 		}
 	}
 }
@@ -53,7 +51,7 @@ int search(int element,int no)
 void write2file(int no,int element)
 {
 	FILE *fp;
-	fp=fopen("export.debagnik","w");
+	fp=fopen("debagnik.txt","w");
 	for(i=0;i<no;i++)
 	{
 		if(arr[i]==element)
@@ -65,7 +63,6 @@ void write2file(int no,int element)
 			fprintf(fp,"   \t%d\n",arr[i]);
 		}
 	}
-	printf("file saved sucessfully to avoid overwritng data please rename the file");
 	fclose(fp);
 }
 
@@ -102,6 +99,7 @@ void main()
 				break;
 			case 4:
 				write2file(no,element);
+				printf("file saved sucessfully to avoid overwritng data please rename the file");
 				break;
 			case 5:
 				break;
